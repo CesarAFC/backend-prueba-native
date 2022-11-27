@@ -1,0 +1,9 @@
+{
+  "arrowParens": "avoid",
+  "useTabs": true,
+  "tabWidth": 2,
+  "singleQuote": true,
+  "singleAttributePerLine": false,
+  "quoteProps": "as-needed",
+  "printWidth": 80
+}
