@@ -1,4 +1,4 @@
-const { Op } = require('sequelize');
+const { Op, Model } = require('sequelize');
 const Models = require('../../db/models/index');
 
 module.exports = class UserStore {
@@ -7,6 +7,15 @@ module.exports = class UserStore {
 	}
 
 	async findAll() {
-		throw new Error('Not implemented');
+		return Models.Photos.findAll()
+		// throw new Error('Not implemented');
+	}
+
+	async create({lat, lon, picture}) {
+		return Models.Photos.create({
+			lat,
+			lon,
+			picture,
+		})
 	}
 };

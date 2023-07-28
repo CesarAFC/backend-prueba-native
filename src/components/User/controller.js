@@ -14,4 +14,14 @@ module.exports = class UserController {
 			next(error);
 		}
 	};
+
+	async create(req, res, next) {
+		try {
+			const {lat, lon} = req.body;
+			const response = await store.create({lat, lon, picture: req.file});
+			res.status(200).json(response)
+		}  catch(e) {
+			next(e);
+		}
+	}
 };
